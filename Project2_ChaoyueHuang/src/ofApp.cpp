@@ -26,6 +26,8 @@ void ofApp::update(){
                 //getting pixel colot
                 ofColor col = pixels.getColor(x, y);
                 
+                //calculate the distance between each poxel and
+                //the mouse's position
                 //change pixels' color
                 float d = ofDist(x, y, ofGetMouseX(), ofGetMouseY());
                 float adjustbrightness = ofMap(d, 0, 100, 8, 0);
