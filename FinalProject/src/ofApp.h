@@ -60,4 +60,9 @@ class ofApp: public ofBaseApp{
     
     void creatNewPoint();
     int time;
+    
+    //define 3D graphic
+    ofSpherePrimitive sphere;
+    ofShader shader;
+    vector<ofSpherePrimitive> sp;
 };

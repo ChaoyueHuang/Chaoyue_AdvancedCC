@@ -16,6 +16,11 @@ void ofApp::setup(){
     mesh.enableColors();
     mesh.enableIndices();
     
+    //load shader
+    if(ofIsGLProgrammableRenderer()){
+        shader.load("shader");
+    }
+    
     //float connectionDistance = 30;
     int numVerts = mesh.getNumVertices();
     for (int a=0; a<numVerts; ++a) {
@@ -91,12 +96,21 @@ void ofApp::setup(){
         
     }
     
-    //set all the cylinders
+    //set all the shperes
     for(int i = 0; i <position.size(); i++) {
-        cy.resize(position.size());
-        cy[i].set(4.0f, ofRandom(50.0f, 180.0f), 12, 4);
-        cy[i].setPosition(position[i]);
-        cy.push_back(cy[i]);
+//        cy.resize(position.size());
+//        cy[i].set(4.0f, ofRandom(50.0f, 180.0f), 12, 4);
+//        cy[i].setPosition(position[i]);
+        
+//        sp.resize(position.size());
+//        shader.begin();
+//        shader.setUniform4f("globalColor", sin(ofGetElapsedTimef()), cos(ofGetElapsedTimef()),100, sin(ofGetElapsedTimef())+1);
+//        shader.setUniform1f("time", ofGetElapsedTimef());
+//        sp[i].set(25.0f, 120);
+//        sp[i].setPosition(position[i]);
+//        sp.push_back(sp[i]);
+//        shader.end();
+        
             }
     
    
@@ -181,22 +195,31 @@ void ofApp::draw(){
     }
     //camera stuff end
     
-    ofPushMatrix();
+    //ofPushMatrix();
     //ofTranslate(-ofGetWidth()/2, -ofGetHeight()/2);
-    
-    
-    
     
     mesh.draw();
     
     
-    //draw the cylinders
+    //draw the spheres
+    shader.begin();
+    sp.resize(position.size());
     for(int n = 0; n <position.size(); n++) {
-        cy[n].drawWireframe();
+        
+        shader.begin();
+        shader.setUniform4f("globalColor", sin(ofGetElapsedTimef()), cos(ofGetElapsedTimef()),100, sin(ofGetElapsedTimef())+1);
+        shader.setUniform1f("time", ofGetElapsedTimef());
+        shader.end();
+        sp[n].set(25.0f, 12);
+        sp[n].setPosition(position[n]);
+        sp.push_back(sp[n]);
+        sp[n].drawWireframe();
     }
+    shader.end();
+   
     
     
-    ofPopMatrix();
+    //ofPopMatrix();
     cam.end();
     
     //text
