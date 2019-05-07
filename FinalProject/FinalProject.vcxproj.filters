@@ -7,6 +7,9 @@
 		<ClCompile Include="src\main.cpp">
 			<Filter>src</Filter>
 		</ClCompile>
+		<ClCompile Include="src\ParticleVec3.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
 		<ClCompile Include="..\..\..\addons\ofxAudioFile\src\ofxAudioFile.cpp">
 			<Filter>addons\ofxAudioFile\src</Filter>
 		</ClCompile>
@@ -30,6 +33,9 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="src\ofApp.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="src\ParticleVec3.h">
 			<Filter>src</Filter>
 		</ClInclude>
 		<ClInclude Include="..\..\..\addons\ofxAudioFile\src\ofxAudioFile.h">

@@ -182,10 +182,12 @@
 	<ItemGroup>
 		<ClCompile Include="src\main.cpp" />
 		<ClCompile Include="src\ofApp.cpp" />
+		<ClCompile Include="src\ParticleVec3.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxAudioFile\src\ofxAudioFile.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="src\ofApp.h" />
+		<ClInclude Include="src\ParticleVec3.h" />
 		<ClInclude Include="..\..\..\addons\ofxAudioFile\src\ofxAudioFile.h" />
 		<ClInclude Include="..\..\..\addons\ofxAudioFile\libs\dr_mp3.h" />
 		<ClInclude Include="..\..\..\addons\ofxAudioFile\libs\dr_wav.h" />
